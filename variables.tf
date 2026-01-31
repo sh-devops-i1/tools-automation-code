@@ -8,6 +8,9 @@ variable "tool_name" {
   }
 }
 
+variable "zone_id" {
+  default = "Z03351562OJATKDWYEO40"
+}
 
 
 
