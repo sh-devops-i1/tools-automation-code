@@ -5,8 +5,7 @@ Description = Prometheus Server Service
 User=bin
 WorkingDirectory=/opt/prometheus-{{ version }}.linux-amd64
 ExecStart=/opt/prometheus-{{ version }}.linux-amd64/prometheus
-StandardOutput=syslog
-StandardError=syslog
+
 SyslogIdentifier=prometheus
 
 [Install]
