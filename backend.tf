@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "sh-terraform-backend-bucket"
-    key    = "expense-terraform/dev/state"
+    key    = "tools/state"
     region = "us-east-1"
   }
 }
