@@ -58,3 +58,23 @@ resource "aws_iam_instance_profile" "profile" {
   name = "${var.tool_name}-profile"
   role = aws_iam_role.role.name
 }
+
+resource "aws_iam_policy" "prometheus-policy" {
+  name = "policy-618033"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action   = ["ec2:DescribeInstances"]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "prometheus-attach" {
+  role       = aws_iam_role.role.name
+  policy_arn = aws_iam_policy.prometheus-policy.arn
+}
