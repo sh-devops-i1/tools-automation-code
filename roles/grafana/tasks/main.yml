@@ -1,0 +1,16 @@
+- name: Copy Grafana service file
+  ansible.builtin.template:
+    src: grafana.service
+    dest: /etc/systemd/system/grafana.service
+
+- name: Install Grafana
+  ansible.builtin.dnf:
+    name: grafana
+    state: installed
+
+- name: Start Grafana Server
+  ansible.builtin.systemd_service:
+    name: grafana-server
+    state: restarted
+    enabled: true
+    daemon_reload: true
