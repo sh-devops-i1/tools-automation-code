@@ -3,5 +3,5 @@ variable "instance_type" {}
 variable "zone_id" {}
 variable "policy_resource_list" {}
 variable "dummy_policy" {
-  default = ["DescribeInstanceTypes"]
+  default = ["ec2:DescribeInstanceTypes"]
 }
