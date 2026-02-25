@@ -12,7 +12,7 @@ variable "tool_name" {
     }
     vault = {
       instance_type = "t3.small"
-      policy_resource_list = ["DescribeInstanceTypes"]
+      policy_resource_list = []
 
     }
   }
