@@ -18,4 +18,8 @@
     enabled: true
     daemon_reload: true
 
+- name: install Kibana
+  ansible.builtin.dnf:
+    name: kibana
+    state: installed
 
