@@ -1,0 +1,8 @@
+- name: set prompt name
+  ansible.builtin.shell: set-prompt elk
+
+- name: copy elastic repo file
+  ansible.builtin.template:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
+
