@@ -28,3 +28,20 @@
     name: kibana
     state: started
     enabled: true
+
+- name: Update server port
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/kibana.yml
+    regexp: '^server.port: 5601'
+    line: "server.port: 5601"
+
+- name: Update server host
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/kibana.yml
+    regexp: "^server.host: localhost"
+    line: "server.host: 0.0.0.0"
+
+- name: Start Kibana
+  ansible.builtin.systemd_service:
+    name: kibana
+    state: restarted
